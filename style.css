@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 /* =========================================
    ESTILOS GENERALES Y FONDO OSCURO
@@ -6,7 +6,8 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    /* Azul noche profundo basado en la imagen */
     background-color: #111c2a; 
     background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     background-attachment: fixed;
@@ -14,31 +15,143 @@ body {
 }
 
 /* =========================================
-   BARRA DE NAVEGACIÓN (FIJA)
+   BARRA DE NAVEGACIÓN (FIJA / STICKY)
    ========================================= */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 25px 8%;
-    background: rgba(15, 23, 42, 0.85);
+    background: rgba(15, 23, 42, 0.85); /* Translúcido */
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    
+    /* Efecto Fijo (Sticky) */
     position: sticky;
     top: 0;
     z-index: 1000;
+    
+    /* Efecto Cristal */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
 
-.logo { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; }
+.logo {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
 
-.nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
-.nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 400; font-size: 1rem; padding: 8px 16px; transition: all 0.3s ease; }
-.nav-links a:hover { color: #FF9800; }
-.nav-links .btn-activo { color: #FF9800; font-weight: 600; border-bottom: 2px solid #FF9800; }
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FF9800; /* Naranja Científica */
+}
+
+.nav-links .btn-activo {
+    color: #FF9800;
+    font-weight: 600;
+    border-bottom: 2px solid #FF9800;
+}
 
 /* =========================================
-   CONTENEDORES GENERALES
+   SECCIÓN HERO (PÁGINA DE INICIO)
+   ========================================= */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 8%;
+    min-height: 70vh;
+}
+
+.hero-texto {
+    flex: 1;
+    max-width: 600px;
+}
+
+.subtitulo {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin-bottom: 10px;
+    color: #FF9800;
+    text-transform: uppercase;
+}
+
+.hero-texto h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+    color: white;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #cbd5e1;
+}
+
+.btn-primario {
+    display: inline-flex;
+    align-items: center;
+    background-color: #FF9800;
+    color: #111c2a;
+    text-decoration: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 5px;
+}
+
+.btn-primario:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+.hero-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.circulo-contenedor {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.circulo-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* =========================================
+   CONTENEDORES GENERALES (EFECTO CRISTAL SUAVE)
    ========================================= */
 .seccion-container {
     background: rgba(255, 255, 255, 0.03); 
@@ -48,13 +161,39 @@ body {
     margin: 2rem 8% 4rem 8%;
 }
 
-.seccion-container h2 { border-bottom: 2px solid #FF9800; display: inline-block; padding-bottom: 10px; color: white; }
+.seccion-container h2, .seccion-container h3 {
+    color: white;
+    margin-top: 0;
+}
+
+.seccion-container h2 {
+    border-bottom: 2px solid #FF9800;
+    display: inline-block;
+    padding-bottom: 10px;
+}
 
 /* =========================================
-   DISEÑO PARA TRABAJOS (IZQUIERDA)
+   DISEÑO PARA LA PÁGINA DE TRABAJOS
    ========================================= */
-.responsive-layout { display: flex; gap: 40px; align-items: flex-start; }
-.menu-trabajos { flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 15px; }
+.responsive-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Panel Izquierdo: Botones */
+.menu-trabajos {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-trabajos h3 {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+}
 
 .btn-trabajo {
     background-color: transparent;
@@ -73,25 +212,121 @@ body {
     border-radius: 5px;
 }
 
-.btn-trabajo:hover { border-color: #FF9800; color: #FF9800; }
-.btn-trabajo.activo { background-color: #FF9800; color: #111c2a; border: 2px solid #FF9800; }
+.btn-trabajo .icono {
+    font-size: 1.2rem;
+}
 
-.visor-trabajos { flex: 3; width: 100%; }
+.btn-trabajo:hover {
+    border-color: #FF9800;
+    color: #FF9800;
+}
+
+/* Botón Activo (Fondo Naranja, Texto Oscuro) */
+.btn-trabajo.activo {
+    background-color: #FF9800;
+    color: #111c2a; 
+    border: 2px solid #FF9800;
+}
+
+/* Panel Derecho: Visor PDF */
+.visor-trabajos {
+    flex: 3;
+    width: 100%;
+}
+
 .iframe-container {
     height: 75vh;
     min-height: 600px;
     border: 2px solid rgba(255,255,255,0.1);
     border-radius: 5px;
-    background-color: #fff;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background-color: #fff; /* Fondo blanco para que el PDF se lea bien */
 }
 
 /* =========================================
-   RESPONSIVE (CELULARES)
+   PÁGINA INTEGRANTES
+   ========================================= */
+.galeria { 
+    display: flex; 
+    justify-content: center; 
+    gap: 35px; 
+    flex-wrap: wrap; 
+    margin-top: 30px; 
+}
+
+.tarjeta {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    text-align: center;
+    width: 220px;
+    padding: 25px 20px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover { 
+    transform: translateY(-10px); 
+    border-color: #FF9800; 
+}
+
+.tarjeta img { 
+    width: 140px; 
+    height: 140px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 3px solid #FF9800; 
+    margin-bottom: 15px; 
+}
+
+.tarjeta h3 { 
+    font-size: 1.1rem; 
+    margin: 0 0 5px 0; 
+    border: none; 
+    color: white;
+}
+
+.tarjeta p { 
+    font-size: 0.9rem; 
+    margin: 0; 
+    color: #cbd5e1; 
+}
+
+/* =========================================
+   RESPONSIVE (CELULARES Y TABLETS)
    ========================================= */
 @media (max-width: 900px) {
-    .responsive-layout { flex-direction: column; }
-    .menu-trabajos { width: 100%; flex-direction: row; overflow-x: auto; }
-    .btn-trabajo { min-width: 180px; }
-    .navbar { flex-direction: column; gap: 15px; padding: 15px 5%; }
-    .nav-links a { white-space: nowrap; }
+    .responsive-layout {
+        flex-direction: column;
+    }
+    .menu-trabajos {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    .btn-trabajo {
+        min-width: 180px;
+    }
+    .hero-section { flex-direction: column; text-align: center; }
+    .hero-imagen { justify-content: center; margin-top: 40px; }
+    .circulo-contenedor { width: 300px; height: 300px; }
+    .hero-texto h1 { font-size: 3rem; }
+    
+    /* ARREGLO DEL NAVBAR PARA MÓVILES */
+    .navbar { 
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 15px 5%;
+    }
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    .nav-links a {
+        font-size: 0.9rem; 
+        padding: 8px 10px;
+        white-space: nowrap; /* Evita que las palabras se separen */
+    }
 }
