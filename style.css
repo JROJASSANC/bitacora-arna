@@ -1,235 +1,206 @@
-/* IMPORTACIÓN DE FUENTES DESDE GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Roboto:wght@400;500&display=swap');
+/* IMPORTACIÓN DE LA FUENTE POPPINS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 /* =========================================
-   ESTILOS GENERALES Y MENÚ DE NAVEGACIÓN
+   ESTILOS GENERALES Y FONDO DEGRADADO
    ========================================= */
 body {
-    /* Aplicamos Open Sans a todo el documento */
-    font-family: 'Open Sans', sans-serif;
-    background-color: #f8f9fa;
-    color: #333333;
     margin: 0;
     padding: 0;
-}
-
-/* Aplicamos Montserrat solo a los títulos para darles jerarquía */
-h1, h2, h3 {
-    font-family: 'Montserrat', sans-serif;
-}
-
-header {
-    background-color: #0B3560; /* Azul Científica */
+    font-family: 'Poppins', sans-serif;
+    /* El degradado dinámico azul a celeste */
+    background: linear-gradient(135deg, #02488e 0%, #00bced 50%, #02488e 100%);
+    background-attachment: fixed; /* Evita que el fondo se mueva al hacer scroll */
     color: white;
-    text-align: center;
-    padding-top: 2.5rem;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.8rem;
-    letter-spacing: -0.5px;
-}
-
-header p {
-    margin-bottom: 1.5rem;
-    color: #e0e6ed;
-    font-size: 1.1rem;
-}
-
-nav {
-    background-color: #07223D; /* Azul Científica más oscuro para el menú */
-    padding: 15px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+/* =========================================
+   BARRA DE NAVEGACIÓN
+   ========================================= */
+.navbar {
     display: flex;
-    justify-content: center;
-    gap: 35px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 8%;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
     font-weight: 600;
-    font-size: 1.05rem;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: color 0.3s ease;
 }
 
-nav a:hover {
-    color: #F37A20; /* Naranja Acento */
+.logo-icono {
+    font-size: 2rem;
 }
 
-main {
-    max-width: 1050px;
-    margin: 2.5rem auto;
-    padding: 0 20px;
-}
-
-.seccion-container {
-    background: #ffffff;
-    padding: 35px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    margin-bottom: 3rem;
-}
-
-h2 {
-    color: #0B3560; /* Azul Científica */
-    border-bottom: 3px solid #F37A20; /* Subrayado Naranja Institucional */
-    padding-bottom: 10px;
-    margin-top: 0;
-    display: inline-block;
-}
-
-/* =========================================
-   DISEÑO DE INTEGRANTES (DIRECTORIO)
-   ========================================= */
-.galeria {
-    display: flex;
-    justify-content: center;
-    gap: 35px;
-    flex-wrap: wrap;
-    margin-top: 30px;
-}
-
-.tarjeta {
-    text-align: center;
-    width: 210px;
-}
-
-.tarjeta img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: white;
-    padding: 6px;
-    border: 3px solid #F37A20; /* Naranja Acento */
-    box-shadow: 0 4px 12px rgba(11, 53, 96, 0.15); /* Sombra sutil con tono azul */
-    transition: transform 0.3s ease;
-}
-
-.tarjeta img:hover {
-    transform: scale(1.05); /* Pequeño zoom al pasar el mouse por la foto */
-}
-
-.tarjeta h3 {
-    margin: 18px 0 5px;
-    font-size: 1.15rem;
-    color: #0B3560; /* Azul Científica */
-}
-
-.tarjeta p {
-    margin: 0;
-    font-size: 0.95rem;
-    color: #444;
-}
-
-.tarjeta p strong {
-    color: #F37A20; /* Naranja para resaltar los roles */
-}
-
-.descripcion-corta {
-    margin-top: 10px !important;
-    font-size: 0.85rem !important;
-    color: #666 !important;
-    line-height: 1.5;
-}
-
-/* =========================================
-   DISEÑO PARA LA PÁGINA DE TRABAJOS (RESPONSIVE)
-   ========================================= */
-.responsive-layout {
+.nav-links {
+    list-style: none;
     display: flex;
     gap: 30px;
-    align-items: flex-start;
+    margin: 0;
+    padding: 0;
 }
 
-.menu-trabajos {
-    flex: 1;
-    min-width: 220px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.menu-trabajos h3 {
-    margin-top: 0;
-    color: #0B3560;
-    border-bottom: 2px solid #e0e6ed;
-    padding-bottom: 10px;
-}
-
-.btn-trabajo {
-    background-color: #f8f9fa;
-    border: 1px solid #dcdde1;
-    padding: 14px 15px;
-    text-align: left;
-    cursor: pointer;
-    border-radius: 6px;
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
     font-size: 1rem;
-    color: #0B3560;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
     transition: all 0.3s ease;
 }
 
-.btn-trabajo:hover {
-    background-color: #e0e6ed;
-    border-color: #0B3560;
+.nav-links a:hover {
+    color: #e0f7fa;
 }
 
-.btn-trabajo.activo {
-    background-color: #F37A20; /* Naranja Acento */
+.nav-links .btn-activo {
+    background-color: white;
+    color: #02488e;
+    font-weight: 600;
+}
+
+/* =========================================
+   SECCIÓN HERO (INICIO)
+   ========================================= */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 8%;
+    min-height: 70vh;
+}
+
+.hero-texto {
+    flex: 1;
+    max-width: 600px;
+}
+
+.subtitulo {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.hero-texto h1 {
+    font-size: 4.5rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 20px 0;
+}
+
+.descripcion {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    color: #e0f7fa;
+}
+
+/* BOTÓN TIPO PÍLDORA */
+.btn-primario {
+    display: inline-flex;
+    align-items: center;
+    background-color: white;
+    color: #333;
+    text-decoration: none;
+    padding: 10px 10px 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn-primario:hover {
+    transform: scale(1.05);
+}
+
+.flecha {
+    background: linear-gradient(135deg, #00bced, #02488e);
     color: white;
-    border-color: #F37A20;
-    box-shadow: 0 4px 8px rgba(243, 122, 32, 0.3);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-left: 15px;
 }
 
-.visor-trabajos {
-    flex: 3;
-    width: 100%;
+/* IMAGEN CIRCULAR DERECHA */
+.hero-imagen {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.visor-trabajos h3 {
-    margin-top: 0;
-    color: #0B3560;
-}
-
-.iframe-container {
-    height: 75vh;
-    min-height: 550px;
-    border: 2px solid #e0e6ed;
-    border-radius: 8px;
+.circulo-contenedor {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    border: 8px solid white;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
 }
 
-@media (max-width: 768px) {
-    .responsive-layout {
-        flex-direction: column;
-    }
-    
-    .menu-trabajos {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        padding-bottom: 10px;
-    }
-    
-    .btn-trabajo {
-        min-width: 160px;
-        text-align: center;
-    }
+.circulo-contenedor img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-    .iframe-container {
-        height: 60vh;
-    }
+/* =========================================
+   ESTILOS PARA LAS OTRAS PÁGINAS (EFECTO CRISTAL)
+   ========================================= */
+.seccion-container {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin: 2rem 8% 4rem 8%;
+}
+
+.seccion-container h2, .seccion-container h3 {
+    color: white;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+/* Tarjetas de integrantes actualizadas para fondo oscuro */
+.galeria { display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; margin-top: 30px; }
+.tarjeta {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 15px;
+    text-align: center;
+    width: 210px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+.tarjeta:hover { transform: translateY(-10px); background: rgba(255,255,255,0.1); }
+.tarjeta img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid white; margin-bottom: 15px; }
+.tarjeta h3 { font-size: 1.1rem; margin: 0 0 5px 0; border: none; }
+.tarjeta p { font-size: 0.9rem; margin: 0; color: #e0f7fa; }
+
+/* Botones laterales de trabajos actualizados */
+.btn-trabajo { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); }
+.btn-trabajo:hover { background: rgba(255,255,255,0.2); color: white; }
+.btn-trabajo.activo { background: white; color: #02488e; font-weight: 600; }
+
+/* =========================================
+   RESPONSIVE (PARA CELULARES)
+   ========================================= */
+@media (max-width: 900px) {
+    .hero-section { flex-direction: column; text-align: center; }
+    .hero-imagen { justify-content: center; margin-top: 40px; }
+    .circulo-contenedor { width: 300px; height: 300px; }
+    .hero-texto h1 { font-size: 3rem; }
+    .navbar { flex-direction: column; gap: 20px; }
 }
