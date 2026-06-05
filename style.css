@@ -1,17 +1,17 @@
-/* IMPORTACIÓN DE LA FUENTE POPPINS */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
 
 /* =========================================
-   ESTILOS GENERALES Y FONDO DEGRADADO
+   ESTILOS GENERALES Y FONDO OSCURO
    ========================================= */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
-    /* El degradado dinámico azul a celeste */
-    background: linear-gradient(135deg, #02488e 0%, #00bced 50%, #02488e 100%);
-    background-attachment: fixed; /* Evita que el fondo se mueva al hacer scroll */
-    color: white;
+    /* Azul noche profundo basado en la imagen */
+    background-color: #111c2a; 
+    background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background-attachment: fixed;
+    color: #e2e8f0;
 }
 
 /* =========================================
@@ -22,18 +22,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 30px 8%;
+    background: rgba(15, 23, 42, 0.8); /* Ligeramente translúcido */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
-.logo-icono {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: 1px;
 }
 
 .nav-links {
@@ -45,27 +41,26 @@ body {
 }
 
 .nav-links a {
-    color: white;
+    color: #cbd5e1;
     text-decoration: none;
     font-weight: 400;
     font-size: 1rem;
     padding: 8px 16px;
-    border-radius: 20px;
     transition: all 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #e0f7fa;
+    color: #FF9800; /* Naranja Científica */
 }
 
 .nav-links .btn-activo {
-    background-color: white;
-    color: #02488e;
+    color: #FF9800;
     font-weight: 600;
+    border-bottom: 2px solid #FF9800;
 }
 
 /* =========================================
-   SECCIÓN HERO (INICIO)
+   SECCIÓN HERO (PÁGINA DE INICIO)
    ========================================= */
 .hero-section {
     display: flex;
@@ -83,8 +78,10 @@ body {
 .subtitulo {
     font-size: 1rem;
     letter-spacing: 2px;
-    font-weight: 300;
+    font-weight: 400;
     margin-bottom: 10px;
+    color: #FF9800;
+    text-transform: uppercase;
 }
 
 .hero-texto h1 {
@@ -92,6 +89,7 @@ body {
     font-weight: 800;
     line-height: 1.1;
     margin: 0 0 20px 0;
+    color: white;
 }
 
 .descripcion {
@@ -99,40 +97,28 @@ body {
     font-weight: 300;
     line-height: 1.6;
     margin-bottom: 40px;
-    color: #e0f7fa;
+    color: #cbd5e1;
 }
 
-/* BOTÓN TIPO PÍLDORA */
 .btn-primario {
     display: inline-flex;
     align-items: center;
-    background-color: white;
-    color: #333;
+    background-color: #FF9800;
+    color: #111c2a;
     text-decoration: none;
-    padding: 10px 10px 10px 25px;
-    border-radius: 50px;
+    padding: 12px 30px;
     font-weight: 600;
     font-size: 1.1rem;
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primario:hover {
+    background-color: white;
     transform: scale(1.05);
 }
 
-.flecha {
-    background: linear-gradient(135deg, #00bced, #02488e);
-    color: white;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    margin-left: 15px;
-}
-
-/* IMAGEN CIRCULAR DERECHA */
 .hero-imagen {
     flex: 1;
     display: flex;
@@ -143,9 +129,9 @@ body {
     width: 500px;
     height: 500px;
     border-radius: 50%;
-    border: 8px solid white;
+    border: 5px solid rgba(255, 255, 255, 0.1);
     overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
 }
 
 .circulo-contenedor img {
@@ -155,49 +141,133 @@ body {
 }
 
 /* =========================================
-   ESTILOS PARA LAS OTRAS PÁGINAS (EFECTO CRISTAL)
+   CONTENEDORES GENERALES
    ========================================= */
 .seccion-container {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(15px);
-    -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.03); /* Fondo oscuro muy sutil */
+    border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
     margin: 2rem 8% 4rem 8%;
 }
 
 .seccion-container h2, .seccion-container h3 {
     color: white;
-    border-bottom: 2px solid rgba(255,255,255,0.3);
+    margin-top: 0;
 }
 
-/* Tarjetas de integrantes actualizadas para fondo oscuro */
-.galeria { display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; margin-top: 30px; }
-.tarjeta {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.2);
-    border-radius: 15px;
-    text-align: center;
-    width: 210px;
-    padding: 20px;
-    transition: transform 0.3s ease;
+.seccion-container h2 {
+    border-bottom: 2px solid #FF9800;
+    display: inline-block;
+    padding-bottom: 10px;
 }
-.tarjeta:hover { transform: translateY(-10px); background: rgba(255,255,255,0.1); }
-.tarjeta img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid white; margin-bottom: 15px; }
-.tarjeta h3 { font-size: 1.1rem; margin: 0 0 5px 0; border: none; }
-.tarjeta p { font-size: 0.9rem; margin: 0; color: #e0f7fa; }
-
-/* Botones laterales de trabajos actualizados */
-.btn-trabajo { background: rgba(255,255,255,0.1); color: white; border: 1px solid rgba(255,255,255,0.3); }
-.btn-trabajo:hover { background: rgba(255,255,255,0.2); color: white; }
-.btn-trabajo.activo { background: white; color: #02488e; font-weight: 600; }
 
 /* =========================================
-   RESPONSIVE (PARA CELULARES)
+   DISEÑO PARA LA PÁGINA DE TRABAJOS (RESPONSIVE)
+   ========================================= */
+.responsive-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Panel Izquierdo: Botones */
+.menu-trabajos {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-trabajos h3 {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 15px;
+}
+
+/* ESTILO DE BOTONES BASADO EN LA IMAGEN */
+.btn-trabajo {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 14px 20px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.btn-trabajo .icono {
+    font-size: 1.2rem;
+}
+
+.btn-trabajo:hover {
+    border-color: #FF9800;
+    color: #FF9800;
+}
+
+/* Botón Activo (Fondo Naranja, Texto Oscuro) */
+.btn-trabajo.activo {
+    background-color: #FF9800;
+    color: #111c2a; 
+    border: 2px solid #FF9800;
+}
+
+/* Panel Derecho: Visor PDF */
+.visor-trabajos {
+    flex: 3;
+    width: 100%;
+}
+
+.iframe-container {
+    height: 75vh;
+    min-height: 600px;
+    border: 2px solid rgba(255,255,255,0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    background-color: #fff; /* Fondo blanco para que el PDF se lea bien */
+}
+
+/* =========================================
+   PÁGINA INTEGRANTES
+   ========================================= */
+.galeria { display: flex; justify-content: center; gap: 35px; flex-wrap: wrap; margin-top: 30px; }
+.tarjeta {
+    background: rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 10px;
+    text-align: center;
+    width: 220px;
+    padding: 25px 20px;
+    transition: transform 0.3s ease;
+}
+.tarjeta:hover { transform: translateY(-10px); border-color: #FF9800; }
+.tarjeta img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #FF9800; margin-bottom: 15px; }
+.tarjeta h3 { font-size: 1.1rem; margin: 0 0 5px 0; border: none; color: white;}
+.tarjeta p { font-size: 0.9rem; margin: 0; color: #cbd5e1; }
+
+/* =========================================
+   RESPONSIVE (CELULARES Y TABLETS)
    ========================================= */
 @media (max-width: 900px) {
+    .responsive-layout {
+        flex-direction: column;
+    }
+    .menu-trabajos {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    .btn-trabajo {
+        min-width: 180px;
+    }
     .hero-section { flex-direction: column; text-align: center; }
     .hero-imagen { justify-content: center; margin-top: 40px; }
     .circulo-contenedor { width: 300px; height: 300px; }
