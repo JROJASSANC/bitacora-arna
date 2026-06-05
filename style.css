@@ -14,7 +14,7 @@ body {
 }
 
 /* =========================================
-   BARRA DE NAVEGACIÓN (FIJA / STICKY)
+   BARRA DE NAVEGACIÓN (FIJA)
    ========================================= */
 .navbar {
     display: flex;
@@ -30,120 +30,12 @@ body {
     -webkit-backdrop-filter: blur(12px);
 }
 
-.logo {
-    font-size: 1.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-}
+.logo { font-size: 1.8rem; font-weight: 800; letter-spacing: 1px; }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links a {
-    color: #cbd5e1;
-    text-decoration: none;
-    font-weight: 400;
-    font-size: 1rem;
-    padding: 8px 16px;
-    transition: all 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: #FF9800;
-}
-
-.nav-links .btn-activo {
-    color: #FF9800;
-    font-weight: 600;
-    border-bottom: 2px solid #FF9800;
-}
-
-/* =========================================
-   SECCIÓN HERO (PÁGINA DE INICIO)
-   ========================================= */
-.hero-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 50px 8%;
-    min-height: 70vh;
-}
-
-.hero-texto {
-    flex: 1;
-    max-width: 600px;
-}
-
-.subtitulo {
-    font-size: 1rem;
-    letter-spacing: 2px;
-    font-weight: 400;
-    margin-bottom: 10px;
-    color: #FF9800;
-    text-transform: uppercase;
-}
-
-.hero-texto h1 {
-    font-size: 4.5rem;
-    font-weight: 800;
-    line-height: 1.1;
-    margin: 0 0 20px 0;
-    color: white;
-}
-
-.descripcion {
-    font-size: 1.1rem;
-    font-weight: 300;
-    line-height: 1.6;
-    margin-bottom: 40px;
-    color: #cbd5e1;
-}
-
-.btn-primario {
-    display: inline-flex;
-    align-items: center;
-    background-color: #FF9800;
-    color: #111c2a;
-    text-decoration: none;
-    padding: 12px 30px;
-    font-weight: 600;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 5px;
-}
-
-.btn-primario:hover {
-    background-color: white;
-    transform: scale(1.05);
-}
-
-.hero-imagen {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
-}
-
-.circulo-contenedor {
-    width: 500px;
-    height: 500px;
-    border-radius: 50%;
-    border: 5px solid rgba(255, 255, 255, 0.1);
-    overflow: hidden;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
-}
-
-.circulo-contenedor img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.nav-links { list-style: none; display: flex; gap: 30px; margin: 0; padding: 0; }
+.nav-links a { color: #cbd5e1; text-decoration: none; font-weight: 400; font-size: 1rem; padding: 8px 16px; transition: all 0.3s ease; }
+.nav-links a:hover { color: #FF9800; }
+.nav-links .btn-activo { color: #FF9800; font-weight: 600; border-bottom: 2px solid #FF9800; }
 
 /* =========================================
    CONTENEDORES GENERALES
@@ -156,33 +48,13 @@ body {
     margin: 2rem 8% 4rem 8%;
 }
 
-.seccion-container h2, .seccion-container h3 {
-    color: white;
-    margin-top: 0;
-}
-
-.seccion-container h2 {
-    border-bottom: 2px solid #FF9800;
-    display: inline-block;
-    padding-bottom: 10px;
-}
+.seccion-container h2 { border-bottom: 2px solid #FF9800; display: inline-block; padding-bottom: 10px; color: white; }
 
 /* =========================================
-   DISEÑO PARA TRABAJOS
+   DISEÑO PARA TRABAJOS (IZQUIERDA)
    ========================================= */
-.responsive-layout {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.menu-trabajos {
-    flex: 1;
-    min-width: 250px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+.responsive-layout { display: flex; gap: 40px; align-items: flex-start; }
+.menu-trabajos { flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 15px; }
 
 .btn-trabajo {
     background-color: transparent;
@@ -193,7 +65,7 @@ body {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    text-transform: uppercase;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -201,35 +73,25 @@ body {
     border-radius: 5px;
 }
 
-.btn-trabajo:hover {
-    border-color: #FF9800;
-    color: #FF9800;
-}
+.btn-trabajo:hover { border-color: #FF9800; color: #FF9800; }
+.btn-trabajo.activo { background-color: #FF9800; color: #111c2a; border: 2px solid #FF9800; }
 
-.btn-trabajo.activo {
-    background-color: #FF9800;
-    color: #111c2a; 
-    border: 2px solid #FF9800;
-}
-
+.visor-trabajos { flex: 3; width: 100%; }
 .iframe-container {
     height: 75vh;
     min-height: 600px;
     border: 2px solid rgba(255,255,255,0.1);
     border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     background-color: #fff;
 }
 
 /* =========================================
-   RESPONSIVE (CELULARES Y TABLETS)
+   RESPONSIVE (CELULARES)
    ========================================= */
 @media (max-width: 900px) {
     .responsive-layout { flex-direction: column; }
-    .menu-trabajos { width: 100%; flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
+    .menu-trabajos { width: 100%; flex-direction: row; overflow-x: auto; }
     .btn-trabajo { min-width: 180px; }
     .navbar { flex-direction: column; gap: 15px; padding: 15px 5%; }
-    .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
-    .nav-links a { font-size: 0.9rem; padding: 8px 10px; white-space: nowrap; }
+    .nav-links a { white-space: nowrap; }
 }
