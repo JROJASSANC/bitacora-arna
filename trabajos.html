@@ -8,34 +8,28 @@
 </head>
 <body>
 
-    <header>
-        <h1>Bitácora ARNA</h1>
-        <p>Análisis de la Realidad Nacional y Ambiental</p>
-        
-        <nav>
-            <ul>
-                <li><a href="index.html">Sobre el blog</a></li>
-                <li><a href="integrantes.html">Integrantes</a></li>
-                <li><a href="trabajos.html">Trabajos semanales</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav class="navbar">
+        <div class="logo">
+            <span class="logo-icono">❂</span>
+            <span class="logo-texto">Bitácora ARNA.</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Sobre el blog</a></li>
+            <li><a href="integrantes.html">Integrantes</a></li>
+            <li><a href="trabajos.html" class="btn-activo">Trabajos semanales</a></li>
+        </ul>
+    </nav>
 
     <main>
         <section class="seccion-container responsive-layout">
             
-            <!-- MENÚ DE BOTONES PARA LOS PDF -->
             <div class="menu-trabajos">
                 <h3>Semanas</h3>
-                <!-- El primer botón arranca activo y carga tu PDF inicial -->
                 <button class="btn-trabajo activo" onclick="cambiarPDF('tarea_mapa.pdf', 'Semana 1: Efectos del Cambio Climático y Vulnerabilidad', this)">Semana 1</button>
-                
-                <!-- Botones de ejemplo para futuras tareas (cambia el .pdf luego) -->
                 <button class="btn-trabajo" onclick="cambiarPDF('ejemplo2.pdf', 'Semana 2: Título de la tarea 2', this)">Semana 2</button>
                 <button class="btn-trabajo" onclick="cambiarPDF('ejemplo3.pdf', 'Semana 3: Título de la tarea 3', this)">Semana 3</button>
             </div>
 
-            <!-- ÁREA DONDE SE MUESTRA EL PDF -->
             <div class="visor-trabajos">
                 <h3 id="titulo-trabajo">Semana 1: Efectos del Cambio Climático y Vulnerabilidad</h3>
                 <div class="iframe-container">
@@ -48,22 +42,14 @@
         </section>
     </main>
 
-    <!-- SCRIPT PARA CAMBIAR EL PDF DINÁMICAMENTE -->
     <script>
         function cambiarPDF(archivo, titulo, botonClickeado) {
-            // 1. Cambiar el archivo en el iframe
             document.getElementById('pdf-viewer').src = archivo;
-            
-            // 2. Cambiar el título arriba del visor
             document.getElementById('titulo-trabajo').innerText = titulo;
-            
-            // 3. Quitar la clase 'activo' de todos los botones
             let botones = document.querySelectorAll('.btn-trabajo');
             botones.forEach(function(btn) {
                 btn.classList.remove('activo');
             });
-            
-            // 4. Poner la clase 'activo' solo al botón que se hizo clic
             botonClickeado.classList.add('activo');
         }
     </script>
