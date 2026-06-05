@@ -22,25 +22,31 @@
     <main>
         <section class="seccion-container responsive-layout">
             
-            <!-- LADO IZQUIERDO: MENÚ DE BOTONES VERTICAL -->
             <div class="menu-trabajos">
-                <h3>Semanas</h3>
-                <button class="btn-trabajo activo" onclick="cambiarPDF('tarea_mapa.pdf', 'Semana 1: Efectos del Cambio Climático y Vulnerabilidad', this)">
-                    <span class="icono">❂</span> Semana 1
+                <h3 style="color: white; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 15px;">Evaluaciones</h3>
+                
+                <button class="btn-trabajo activo" onclick="cambiarPDF('tarea1.pdf', 'Trabajo 01: Efectos del Cambio Climático y Vulnerabilidad', this)">
+                    <span class="icono">❂</span> Trabajo 01
                 </button>
-                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo2.pdf', 'Semana 2: Título de la tarea 2', this)">
-                    <span class="icono">❂</span> Semana 2
+                
+                <button class="btn-trabajo" onclick="cambiarPDF('tarea2.pdf', 'Trabajo 02: (Coloca aquí el título de tu trabajo)', this)">
+                    <span class="icono">❂</span> Trabajo 02
                 </button>
-                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo3.pdf', 'Semana 3: Título de la tarea 3', this)">
-                    <span class="icono">❂</span> Semana 3
+                
+                <button class="btn-trabajo" onclick="cambiarPDF('tarea3.pdf', 'Trabajo 03: (Coloca aquí el título de tu trabajo)', this)">
+                    <span class="icono">❂</span> Trabajo 03
+                </button>
+
+                <button class="btn-trabajo" onclick="cambiarPDF('tarea4.pdf', 'Trabajo 04: (Coloca aquí el título de tu trabajo)', this)">
+                    <span class="icono">❂</span> Trabajo 04
                 </button>
             </div>
 
-            <!-- LADO DERECHO: VISOR DEL PDF -->
             <div class="visor-trabajos">
-                <h3 id="titulo-trabajo">Semana 1: Efectos del Cambio Climático y Vulnerabilidad</h3>
+                <h3 id="titulo-trabajo" style="color: white;">Trabajo 01: Efectos del Cambio Climático y Vulnerabilidad</h3>
+                
                 <div class="iframe-container">
-                    <iframe id="pdf-viewer" src="tarea_mapa.pdf" width="100%" height="100%">
+                    <iframe id="pdf-viewer" src="trabajo01.pdf" width="100%" height="100%">
                         Tu navegador no soporta la visualización de PDFs. 
                     </iframe>
                 </div>
@@ -49,7 +55,6 @@
         </section>
     </main>
 
-    <!-- SCRIPT DE LOS BOTONES -->
     <script>
         function cambiarPDF(archivo, titulo, botonClickeado) {
             document.getElementById('pdf-viewer').src = archivo;
