@@ -22,14 +22,51 @@
     </header>
 
     <main>
-        <section class="seccion-container">
-            <h2>Trabajos semanales</h2>
-            <h3>Semana 1: Efectos del Cambio Climático y Vulnerabilidad</h3>
-            <iframe src="tarea_mapa.pdf" width="100%" height="600px" style="border: 1px solid #ccc; border-radius: 5px;">
-                Tu navegador no soporta la visualización de PDFs. 
-            </iframe>
+        <section class="seccion-container responsive-layout">
+            
+            <!-- MENÚ DE BOTONES PARA LOS PDF -->
+            <div class="menu-trabajos">
+                <h3>Semanas</h3>
+                <!-- El primer botón arranca activo y carga tu PDF inicial -->
+                <button class="btn-trabajo activo" onclick="cambiarPDF('tarea_mapa.pdf', 'Semana 1: Efectos del Cambio Climático y Vulnerabilidad', this)">Semana 1</button>
+                
+                <!-- Botones de ejemplo para futuras tareas (cambia el .pdf luego) -->
+                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo2.pdf', 'Semana 2: Título de la tarea 2', this)">Semana 2</button>
+                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo3.pdf', 'Semana 3: Título de la tarea 3', this)">Semana 3</button>
+            </div>
+
+            <!-- ÁREA DONDE SE MUESTRA EL PDF -->
+            <div class="visor-trabajos">
+                <h3 id="titulo-trabajo">Semana 1: Efectos del Cambio Climático y Vulnerabilidad</h3>
+                <div class="iframe-container">
+                    <iframe id="pdf-viewer" src="tarea_mapa.pdf" width="100%" height="100%">
+                        Tu navegador no soporta la visualización de PDFs. 
+                    </iframe>
+                </div>
+            </div>
+
         </section>
     </main>
+
+    <!-- SCRIPT PARA CAMBIAR EL PDF DINÁMICAMENTE -->
+    <script>
+        function cambiarPDF(archivo, titulo, botonClickeado) {
+            // 1. Cambiar el archivo en el iframe
+            document.getElementById('pdf-viewer').src = archivo;
+            
+            // 2. Cambiar el título arriba del visor
+            document.getElementById('titulo-trabajo').innerText = titulo;
+            
+            // 3. Quitar la clase 'activo' de todos los botones
+            let botones = document.querySelectorAll('.btn-trabajo');
+            botones.forEach(function(btn) {
+                btn.classList.remove('activo');
+            });
+            
+            // 4. Poner la clase 'activo' solo al botón que se hizo clic
+            botonClickeado.classList.add('activo');
+        }
+    </script>
 
 </body>
 </html>
