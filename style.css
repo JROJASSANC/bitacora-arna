@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap');
 
 /* =========================================
    ESTILOS GENERALES Y FONDO OSCURO
@@ -6,8 +6,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
-    /* Azul noche profundo basado en la imagen */
+    font-family: 'Outfit', sans-serif;
     background-color: #111c2a; 
     background-image: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     background-attachment: fixed;
@@ -22,15 +21,11 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 25px 8%;
-    background: rgba(15, 23, 42, 0.85); /* Translúcido */
+    background: rgba(15, 23, 42, 0.85);
     box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-    
-    /* Efecto Fijo (Sticky) */
     position: sticky;
     top: 0;
     z-index: 1000;
-    
-    /* Efecto Cristal */
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 }
@@ -59,7 +54,7 @@ body {
 }
 
 .nav-links a:hover {
-    color: #FF9800; /* Naranja Científica */
+    color: #FF9800;
 }
 
 .nav-links .btn-activo {
@@ -151,7 +146,7 @@ body {
 }
 
 /* =========================================
-   CONTENEDORES GENERALES (EFECTO CRISTAL SUAVE)
+   CONTENEDORES GENERALES
    ========================================= */
 .seccion-container {
     background: rgba(255, 255, 255, 0.03); 
@@ -173,7 +168,7 @@ body {
 }
 
 /* =========================================
-   DISEÑO PARA LA PÁGINA DE TRABAJOS
+   DISEÑO PARA TRABAJOS
    ========================================= */
 .responsive-layout {
     display: flex;
@@ -181,18 +176,12 @@ body {
     align-items: flex-start;
 }
 
-/* Panel Izquierdo: Botones */
 .menu-trabajos {
     flex: 1;
     min-width: 250px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-}
-
-.menu-trabajos h3 {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    padding-bottom: 15px;
 }
 
 .btn-trabajo {
@@ -204,7 +193,7 @@ body {
     cursor: pointer;
     font-size: 1rem;
     font-weight: 600;
-    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -212,26 +201,15 @@ body {
     border-radius: 5px;
 }
 
-.btn-trabajo .icono {
-    font-size: 1.2rem;
-}
-
 .btn-trabajo:hover {
     border-color: #FF9800;
     color: #FF9800;
 }
 
-/* Botón Activo (Fondo Naranja, Texto Oscuro) */
 .btn-trabajo.activo {
     background-color: #FF9800;
     color: #111c2a; 
     border: 2px solid #FF9800;
-}
-
-/* Panel Derecho: Visor PDF */
-.visor-trabajos {
-    flex: 3;
-    width: 100%;
 }
 
 .iframe-container {
@@ -241,92 +219,17 @@ body {
     border-radius: 5px;
     overflow: hidden;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    background-color: #fff; /* Fondo blanco para que el PDF se lea bien */
-}
-
-/* =========================================
-   PÁGINA INTEGRANTES
-   ========================================= */
-.galeria { 
-    display: flex; 
-    justify-content: center; 
-    gap: 35px; 
-    flex-wrap: wrap; 
-    margin-top: 30px; 
-}
-
-.tarjeta {
-    background: rgba(0,0,0,0.2);
-    border: 1px solid rgba(255,255,255,0.05);
-    border-radius: 10px;
-    text-align: center;
-    width: 220px;
-    padding: 25px 20px;
-    transition: transform 0.3s ease;
-}
-
-.tarjeta:hover { 
-    transform: translateY(-10px); 
-    border-color: #FF9800; 
-}
-
-.tarjeta img { 
-    width: 140px; 
-    height: 140px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 3px solid #FF9800; 
-    margin-bottom: 15px; 
-}
-
-.tarjeta h3 { 
-    font-size: 1.1rem; 
-    margin: 0 0 5px 0; 
-    border: none; 
-    color: white;
-}
-
-.tarjeta p { 
-    font-size: 0.9rem; 
-    margin: 0; 
-    color: #cbd5e1; 
+    background-color: #fff;
 }
 
 /* =========================================
    RESPONSIVE (CELULARES Y TABLETS)
    ========================================= */
 @media (max-width: 900px) {
-    .responsive-layout {
-        flex-direction: column;
-    }
-    .menu-trabajos {
-        width: 100%;
-        flex-direction: row;
-        overflow-x: auto;
-        padding-bottom: 10px;
-    }
-    .btn-trabajo {
-        min-width: 180px;
-    }
-    .hero-section { flex-direction: column; text-align: center; }
-    .hero-imagen { justify-content: center; margin-top: 40px; }
-    .circulo-contenedor { width: 300px; height: 300px; }
-    .hero-texto h1 { font-size: 3rem; }
-    
-    /* ARREGLO DEL NAVBAR PARA MÓVILES */
-    .navbar { 
-        flex-direction: column; 
-        gap: 15px; 
-        padding: 15px 5%;
-    }
-    .nav-links {
-        gap: 10px;
-        flex-wrap: wrap; 
-        justify-content: center;
-    }
-    .nav-links a {
-        font-size: 0.9rem; 
-        padding: 8px 10px;
-        white-space: nowrap; /* Evita que las palabras se separen */
-    }
+    .responsive-layout { flex-direction: column; }
+    .menu-trabajos { width: 100%; flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
+    .btn-trabajo { min-width: 180px; }
+    .navbar { flex-direction: column; gap: 15px; padding: 15px 5%; }
+    .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .nav-links a { font-size: 0.9rem; padding: 8px 10px; white-space: nowrap; }
 }
