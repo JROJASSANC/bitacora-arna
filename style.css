@@ -1,0 +1,124 @@
+/* ESTILOS GENERALES */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #1a252f;
+    color: white;
+    text-align: center;
+    padding-top: 2rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin-bottom: 1.5rem;
+    color: #bdc3c7;
+}
+
+/* MENÚ DE NAVEGACIÓN */
+nav {
+    background-color: #2c3e50;
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #f39c12; /* Color naranja al pasar el mouse */
+}
+
+main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.seccion-container {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 3rem;
+    scroll-margin-top: 20px; /* Evita que el menú tape el título al hacer clic */
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* DISEÑO DE INTEGRANTES (ESTILO DIRECTORIO) */
+.galeria {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.tarjeta {
+    text-align: center;
+    width: 200px;
+}
+
+/* Efecto de borde circular basado en la imagen */
+.tarjeta img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: white;
+    padding: 6px; /* Crea el espacio blanco entre la foto y la línea */
+    border: 2px solid #e67e22; /* Línea delgada color naranja/dorado */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave para darle profundidad */
+}
+
+.tarjeta h3 {
+    margin: 15px 0 5px;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.tarjeta p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #000;
+}
+
+.tarjeta p strong {
+    color: #2980b9; /* Color azul para los roles entre paréntesis */
+}
+
+.descripcion-corta {
+    margin-top: 10px !important;
+    font-size: 0.85rem !important;
+    color: #666 !important;
+    line-height: 1.4;
+}
