@@ -312,5 +312,21 @@ body {
     .hero-imagen { justify-content: center; margin-top: 40px; }
     .circulo-contenedor { width: 300px; height: 300px; }
     .hero-texto h1 { font-size: 3rem; }
-    .navbar { flex-direction: column; gap: 20px; }
+    
+    /* ARREGLO DEL NAVBAR PARA MÓVILES */
+    .navbar { 
+        flex-direction: column; 
+        gap: 15px; 
+        padding: 15px 5%;
+    }
+    .nav-links {
+        gap: 10px;
+        flex-wrap: wrap; 
+        justify-content: center;
+    }
+    .nav-links a {
+        font-size: 0.9rem; 
+        padding: 8px 10px;
+        white-space: nowrap; /* Evita que las palabras se separen */
+    }
 }
