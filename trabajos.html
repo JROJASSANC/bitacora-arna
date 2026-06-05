@@ -10,8 +10,7 @@
 
     <nav class="navbar">
         <div class="logo">
-            <span class="logo-icono">❂</span>
-            <span class="logo-texto">Bitácora ARNA.</span>
+            <span class="logo-texto" style="color: white;">Bitácora <span style="color: #FF9800;">ARNA.</span></span>
         </div>
         <ul class="nav-links">
             <li><a href="index.html">Sobre el blog</a></li>
@@ -23,13 +22,21 @@
     <main>
         <section class="seccion-container responsive-layout">
             
+            <!-- LADO IZQUIERDO: MENÚ DE BOTONES VERTICAL -->
             <div class="menu-trabajos">
                 <h3>Semanas</h3>
-                <button class="btn-trabajo activo" onclick="cambiarPDF('tarea_mapa.pdf', 'Semana 1: Efectos del Cambio Climático y Vulnerabilidad', this)">Semana 1</button>
-                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo2.pdf', 'Semana 2: Título de la tarea 2', this)">Semana 2</button>
-                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo3.pdf', 'Semana 3: Título de la tarea 3', this)">Semana 3</button>
+                <button class="btn-trabajo activo" onclick="cambiarPDF('tarea_mapa.pdf', 'Semana 1: Efectos del Cambio Climático y Vulnerabilidad', this)">
+                    <span class="icono">❂</span> Semana 1
+                </button>
+                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo2.pdf', 'Semana 2: Título de la tarea 2', this)">
+                    <span class="icono">❂</span> Semana 2
+                </button>
+                <button class="btn-trabajo" onclick="cambiarPDF('ejemplo3.pdf', 'Semana 3: Título de la tarea 3', this)">
+                    <span class="icono">❂</span> Semana 3
+                </button>
             </div>
 
+            <!-- LADO DERECHO: VISOR DEL PDF -->
             <div class="visor-trabajos">
                 <h3 id="titulo-trabajo">Semana 1: Efectos del Cambio Climático y Vulnerabilidad</h3>
                 <div class="iframe-container">
@@ -42,6 +49,7 @@
         </section>
     </main>
 
+    <!-- SCRIPT DE LOS BOTONES -->
     <script>
         function cambiarPDF(archivo, titulo, botonClickeado) {
             document.getElementById('pdf-viewer').src = archivo;
